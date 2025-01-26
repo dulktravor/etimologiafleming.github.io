@@ -241,23 +241,19 @@ document.addEventListener('DOMContentLoaded', () => {
         card.classList.toggle('is-flipped');
     });
 
-    prevButton.addEventListener('click', () => {
+        prevButton.addEventListener('click', () => {
         if (currentCategoryData.length > 0) {
+            card.classList.remove('is-flipped'); // <-- ¡Añadimos esta línea!
             currentCardIndex = (currentCardIndex - 1 + currentCategoryData.length) % currentCategoryData.length;
             updateCard();
-            if (card.classList.contains('is-flipped')) { // Mantener la tarjeta en la cara frontal al navegar
-                card.classList.remove('is-flipped');
-            }
         }
     });
 
-    nextButton.addEventListener('click', () => {
+        nextButton.addEventListener('click', () => {
         if (currentCategoryData.length > 0) {
+            card.classList.remove('is-flipped'); // <-- ¡Añadimos esta línea!
             currentCardIndex = (currentCardIndex + 1) % currentCategoryData.length;
             updateCard();
-            if (card.classList.contains('is-flipped')) { // Mantener la tarjeta en la cara frontal al navegar
-                card.classList.remove('is-flipped');
-            }
         }
     });
 
