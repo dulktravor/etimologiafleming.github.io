@@ -241,17 +241,21 @@ document.addEventListener('DOMContentLoaded', () => {
         card.classList.toggle('is-flipped');
     });
 
-        prevButton.addEventListener('click', () => {
+            prevButton.addEventListener('click', () => {
         if (currentCategoryData.length > 0) {
-            card.classList.remove('is-flipped'); // <-- ¡Añadimos esta línea!
+            card.classList.remove('is-flipped');
+            cardFront.textContent = ""; // <-- ¡Añadimos estas dos líneas!
+            cardBack.textContent = "";  // <-- ¡Limpiamos el contenido!
             currentCardIndex = (currentCardIndex - 1 + currentCategoryData.length) % currentCategoryData.length;
             updateCard();
         }
     });
 
-        nextButton.addEventListener('click', () => {
+            nextButton.addEventListener('click', () => {
         if (currentCategoryData.length > 0) {
-            card.classList.remove('is-flipped'); // <-- ¡Añadimos esta línea!
+            card.classList.remove('is-flipped');
+            cardFront.textContent = ""; // <-- ¡Añadimos estas dos líneas!
+            cardBack.textContent = "";  // <-- ¡Limpiamos el contenido!
             currentCardIndex = (currentCardIndex + 1) % currentCategoryData.length;
             updateCard();
         }
